@@ -45,7 +45,7 @@ print(me.fun_fact())
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/autonomous_banner.svg">
-  <img src="./assets/autonomous_banner.svg" width="100%" alt="Autonomous vehicle animation — LiDAR, drone, Pure Pursuit"/>
+  <img src="./assets/autonomous_banner.svg" width="100%" alt=" Autonomous vehicle animation — LiDAR, drone, Pure Pursuit"/>
 </picture>
 
 </div>
