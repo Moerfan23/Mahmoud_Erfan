@@ -39,6 +39,19 @@ print(me.fun_fact())
 
 ---
 
+## 🚗 Autonomous Systems in Action
+
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/autonomous_banner.svg">
+  <img src="./assets/autonomous_banner.svg" width="100%" alt="Autonomous vehicle animation — LiDAR, drone, Pure Pursuit"/>
+</picture>
+
+</div>
+
+---
+
 ## 🏆 Highlights
 
 <div align="center">
