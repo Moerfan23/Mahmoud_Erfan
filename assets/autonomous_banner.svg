@@ -1,0 +1,136 @@
+<svg width="100%" viewBox="0 0 680 220" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Autonomous vehicle animation</title>
+<desc>An animated autonomous car driving along a road with LiDAR scanning, drone overhead, and Pure Pursuit waypoints</desc>
+<defs>
+  <style>
+    .road-line { animation: dash 1.2s linear infinite; }
+    @keyframes dash { to { stroke-dashoffset: -40; } }
+
+    .car-group { animation: drive 6s linear infinite; }
+    @keyframes drive { 0% { transform: translateX(-120px); } 100% { transform: translateX(780px); } }
+
+    .lidar-ring {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: lidar-pulse 1.4s ease-out infinite;
+      opacity: 0;
+    }
+    .lidar-ring:nth-child(1) { animation-delay: 0s; }
+    .lidar-ring:nth-child(2) { animation-delay: 0.35s; }
+    .lidar-ring:nth-child(3) { animation-delay: 0.7s; }
+    @keyframes lidar-pulse {
+      0%   { r: 8;  opacity: 0.7; }
+      80%  { r: 55; opacity: 0.15; }
+      100% { r: 60; opacity: 0; }
+    }
+
+    .drone-group { animation: drone-float 6s ease-in-out infinite; }
+    @keyframes drone-float {
+      0%,100% { transform: translate(520px, 28px); }
+      50%      { transform: translate(530px, 18px); }
+    }
+
+    .rotor { transform-box: fill-box; transform-origin: center; animation: spin 0.18s linear infinite; }
+
+    .scan-beam { animation: beam-sweep 2s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: 0% 50%; }
+    @keyframes beam-sweep { 0% { transform: rotate(-28deg); } 100% { transform: rotate(28deg); } }
+
+    .wp { animation: wp-blink 2s ease-in-out infinite; }
+    .wp:nth-child(2) { animation-delay: 0.5s; }
+    .wp:nth-child(3) { animation-delay: 1s; }
+    .wp:nth-child(4) { animation-delay: 1.5s; }
+    @keyframes wp-blink { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+    .data-label { animation: fade-slide 3s ease-in-out infinite; }
+    .data-label:nth-child(2) { animation-delay: 1s; }
+    .data-label:nth-child(3) { animation-delay: 2s; }
+    @keyframes fade-slide { 0%,100% { opacity: 0; transform: translateY(4px); } 30%,70% { opacity: 1; transform: translateY(0); } }
+  </style>
+  <clipPath id="scene-clip">
+    <rect x="0" y="0" width="680" height="220"/>
+  </clipPath>
+</defs>
+
+<g clip-path="url(#scene-clip)">
+  <rect x="0" y="0" width="680" height="130" fill="#0d1117"/>
+  <rect x="0" y="130" width="680" height="90" fill="#111820"/>
+
+  <circle cx="60"  cy="18"  r="1"   fill="#54805C" opacity="0.6"/>
+  <circle cx="180" cy="35"  r="1"   fill="#54805C" opacity="0.5"/>
+  <circle cx="290" cy="12"  r="1.2" fill="#54805C" opacity="0.7"/>
+  <circle cx="430" cy="28"  r="1"   fill="#54805C" opacity="0.4"/>
+  <circle cx="580" cy="10"  r="1"   fill="#54805C" opacity="0.6"/>
+  <circle cx="640" cy="40"  r="0.8" fill="#54805C" opacity="0.5"/>
+  <circle cx="110" cy="55"  r="0.8" fill="#54805C" opacity="0.3"/>
+  <circle cx="350" cy="50"  r="1"   fill="#54805C" opacity="0.4"/>
+
+  <rect x="0" y="130" width="680" height="64" fill="#1a2332"/>
+  <line x1="0" y1="130" x2="680" y2="130" stroke="#54805C" stroke-width="1" opacity="0.5"/>
+  <line x1="0" y1="194" x2="680" y2="194" stroke="#54805C" stroke-width="1" opacity="0.3"/>
+  <line x1="0" y1="162" x2="680" y2="162" stroke="#54805C" stroke-width="1.5" opacity="0.35" stroke-dasharray="20 20" class="road-line"/>
+
+  <g>
+    <circle class="wp" cx="160" cy="162" r="5" fill="none" stroke="#54805C" stroke-width="1.5"/>
+    <circle class="wp" cx="160" cy="162" r="2" fill="#54805C"/>
+    <circle class="wp" cx="300" cy="162" r="5" fill="none" stroke="#54805C" stroke-width="1.5"/>
+    <circle class="wp" cx="300" cy="162" r="2" fill="#54805C"/>
+    <circle class="wp" cx="460" cy="162" r="5" fill="none" stroke="#54805C" stroke-width="1.5"/>
+    <circle class="wp" cx="460" cy="162" r="2" fill="#54805C"/>
+    <circle class="wp" cx="600" cy="162" r="5" fill="none" stroke="#54805C" stroke-width="1.5"/>
+    <circle class="wp" cx="600" cy="162" r="2" fill="#54805C"/>
+  </g>
+
+  <g class="car-group">
+    <circle class="lidar-ring" cx="34" cy="142" r="8" fill="none" stroke="#54805C" stroke-width="1"/>
+    <circle class="lidar-ring" cx="34" cy="142" r="8" fill="none" stroke="#54805C" stroke-width="0.8"/>
+    <circle class="lidar-ring" cx="34" cy="142" r="8" fill="none" stroke="#54805C" stroke-width="0.5"/>
+
+    <line class="scan-beam" x1="60" y1="155" x2="100" y2="155" stroke="#54805C" stroke-width="1" opacity="0.6"/>
+
+    <rect x="4"  y="150" width="60" height="28" rx="5" fill="#1e3a2a" stroke="#54805C" stroke-width="1"/>
+    <rect x="14" y="138" width="36" height="18" rx="4" fill="#162b1e" stroke="#54805C" stroke-width="0.8"/>
+    <rect x="17" y="141" width="13" height="11" rx="2" fill="#54805C" opacity="0.3"/>
+    <rect x="33" y="141" width="13" height="11" rx="2" fill="#54805C" opacity="0.3"/>
+    <ellipse cx="34" cy="138" rx="6" ry="4" fill="#54805C" opacity="0.8"/>
+    <ellipse cx="34" cy="137" rx="3" ry="2" fill="#54805C"/>
+    <rect x="61" y="154" width="5" height="4" rx="1" fill="#54805C" opacity="0.9"/>
+    <rect x="61" y="162" width="5" height="4" rx="1" fill="#54805C" opacity="0.6"/>
+    <polygon points="66,153 90,144 90,173 66,168" fill="#54805C" opacity="0.06"/>
+    <circle cx="16" cy="178" r="8" fill="#0d1117" stroke="#54805C" stroke-width="1.5"/>
+    <circle cx="16" cy="178" r="3" fill="#54805C" opacity="0.5"/>
+    <circle cx="52" cy="178" r="8" fill="#0d1117" stroke="#54805C" stroke-width="1.5"/>
+    <circle cx="52" cy="178" r="3" fill="#54805C" opacity="0.5"/>
+
+    <g class="data-label">
+      <rect x="72" y="130" width="68" height="16" rx="3" fill="#0d1117" stroke="#54805C" stroke-width="0.6" opacity="0.9"/>
+      <text x="106" y="141" text-anchor="middle" font-family="monospace" font-size="9" fill="#54805C">LIDAR: OK</text>
+    </g>
+    <g class="data-label">
+      <rect x="72" y="110" width="68" height="16" rx="3" fill="#0d1117" stroke="#54805C" stroke-width="0.6" opacity="0.9"/>
+      <text x="106" y="121" text-anchor="middle" font-family="monospace" font-size="9" fill="#54805C">v = 42 km/h</text>
+    </g>
+    <g class="data-label">
+      <rect x="72" y="90" width="68" height="16" rx="3" fill="#0d1117" stroke="#54805C" stroke-width="0.6" opacity="0.9"/>
+      <text x="106" y="101" text-anchor="middle" font-family="monospace" font-size="9" fill="#54805C">PURE PURSUIT</text>
+    </g>
+  </g>
+
+  <g class="drone-group">
+    <rect x="-12" y="4"  width="24" height="10" rx="3" fill="#1e3a2a" stroke="#54805C" stroke-width="0.8"/>
+    <circle cx="0" cy="14" r="4" fill="#0d1117" stroke="#54805C" stroke-width="0.8"/>
+    <circle cx="0" cy="14" r="2" fill="#54805C" opacity="0.5"/>
+    <line x1="-12" y1="9" x2="-26" y2="3"  stroke="#54805C" stroke-width="0.8" opacity="0.7"/>
+    <line x1="12"  y1="9" x2="26"  y2="3"  stroke="#54805C" stroke-width="0.8" opacity="0.7"/>
+    <line x1="-12" y1="9" x2="-26" y2="15" stroke="#54805C" stroke-width="0.8" opacity="0.7"/>
+    <line x1="12"  y1="9" x2="26"  y2="15" stroke="#54805C" stroke-width="0.8" opacity="0.7"/>
+    <ellipse class="rotor" cx="-26" cy="3"  rx="8" ry="2" fill="none" stroke="#54805C" stroke-width="0.8" opacity="0.6"/>
+    <ellipse class="rotor" cx="26"  cy="3"  rx="8" ry="2" fill="none" stroke="#54805C" stroke-width="0.8" opacity="0.6"/>
+    <ellipse class="rotor" cx="-26" cy="15" rx="8" ry="2" fill="none" stroke="#54805C" stroke-width="0.8" opacity="0.6"/>
+    <ellipse class="rotor" cx="26"  cy="15" rx="8" ry="2" fill="none" stroke="#54805C" stroke-width="0.8" opacity="0.6"/>
+    <line x1="0" y1="18" x2="0" y2="55" stroke="#54805C" stroke-width="0.5" stroke-dasharray="3 3" opacity="0.4"/>
+  </g>
+
+  <text x="16"  y="212" font-family="monospace" font-size="9" fill="#54805C" opacity="0.5">APEX RACING — AUTONOMOUS SYSTEM</text>
+  <text x="664" y="212" text-anchor="end" font-family="monospace" font-size="9" fill="#54805C" opacity="0.5">MAHMOUD ERFAN © 2025</text>
+</g>
+</svg>
