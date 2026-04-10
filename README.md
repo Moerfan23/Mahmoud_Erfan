@@ -179,7 +179,7 @@ NTI                    AI Intern                   Jun 2024 – Aug 2024
 
 <div align="center">
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-MahmoudErfan-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/MahmoudErfan)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-MahmoudErfan-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mahmoud-erfan-eid/)
 [![Email](https://img.shields.io/badge/Email-Mahmouderfan46@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:Mahmouderfan46@gmail.com)
 [![GitHub](https://img.shields.io/badge/GitHub-Moerfan23-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Moerfan23)
 
